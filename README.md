@@ -79,12 +79,12 @@ For Software:
 <img  width="1919" height="1079" alt="Screenshot 2025-08-09 053149" src="https://github.com/user-attachments/assets/1533cac2-65ba-4026-bba3-64b7d08d3ab5" />
 
 
-<img src="<img width="1919" height="1079" alt="Screenshot 2025-08-09 053159" src="https://github.com/user-attachments/assets/4137071b-166e-4efa-a37c-15feb8004950" />
-">
+<img width="1919" height="1079" alt="Screenshot 2025-08-09 053159" src="https://github.com/user-attachments/assets/4137071b-166e-4efa-a37c-15feb8004950" />
 
 
-<img src="<img width="1905" height="1079" alt="Screenshot 2025-08-09 053211" src="https://github.com/user-attachments/assets/38cb769f-8966-469f-ac1e-cb95a89db798" />
-">
+
+<img width="1905" height="1079" alt="Screenshot 2025-08-09 053211" src="https://github.com/user-attachments/assets/38cb769f-8966-469f-ac1e-cb95a89db798" />
+
 
 
 ---
