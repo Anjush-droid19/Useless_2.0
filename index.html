@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ഏത് മൂഡ്!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Chilanka&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif+Malayalam:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family: "Lato", sans-serif;
+        overflow: hidden;
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Bounce-in animation */
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Pulse animation for button */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 111, 145, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(255, 111, 145, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 111, 145, 0);
+        }
+      }
+
+      body {
+        background: linear-gradient(
+          45deg,
+          hsl(200, 80%, 90%),
+          hsl(340, 80%, 85%)
+        );
+        transition: background 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        text-align: center;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      h1 {
+        font-family: "Noto Serif Malayalam", serif;
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      select {
+        background: linear-gradient(145deg, #fdfbfb, #ebedee);
+        border: 2px solid #ff6f91;
+        border-radius: 12px;
+        padding: 12px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        animation: bounceIn 1.5s ease;
+      }
+
+      select:hover {
+        select {
+          padding: 12px 18px;
+          border-radius: 12px;
+          border: 2px solid #ff69b4;
+          background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+          font-size: 1rem;
+          font-family: "Lato", sans-serif;
+          color: #333;
+          outline: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+        }
+
+        /* Hover effect */
+        select:hover {
+          background: linear-gradient(135deg, #ffe4e1, #fff0f5);
+          transform: scale(1.05);
+          box-shadow: 0 6px 14px rgba(255, 105, 180, 0.5);
+        }
+
+        /* Focus effect */
+        select:focus {
+          border-color: #ff1493;
+          box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+        }
+
+        /* Dropdown arrow customization (for Webkit browsers like Chrome) */
+        select::-ms-expand {
+          display: none; /* Hide default arrow in IE */
+        }
+
+        select option {
+          background: #fffafc;
+          color: #333;
+          padding: 10px;
+        }
+
+        background: #ffe0e9;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      }
+
+      button {
+        background: linear-gradient(135deg, #ff6f91, #ff9671);
+        border: none;
+        padding: 14px 28px;
+        font-size: 1.3rem;
+        border-radius: 14px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, background 0.3s;
+        animation: pulse 2s infinite;
+        margin-top: 1rem;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #ff3b3f, #ff7a5c);
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .output {
+        margin-top: 2rem;
+        font-size: 3rem;
+        font-weight: bold;
+        min-height: 2rem;
+        font-family: "Noto Sans Malayalam", sans-serif;
+        color: #ff9514;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ഏത് മൂഡ് 😎</h1>
+      <p>ഇപ്പോഴത്തെ mood പറ</p>
+
+      <select id="mood">
+        <option value="">-- MOOD തിരഞ്ഞെടുക്കുക --</option>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="lazy">Lazy</option>
+        <option value="angry">Angry</option>
+        <option value="desperate">Desperate</option>
+        <option value="romantic">Romantic</option>
+      </select>
+
+      <br />
+      <button onclick="giveOppositeTask()">🚀 ആ പോന്നാട്ടെ</button>
+
+      <div class="output" id="output"></div>
+      <audio id="sound" src="funny.mp3"></audio>
+    </div>
+
+    <script>
+      const oppositeTasks = {
+        happy: [
+          "ചാരിയിരുന്ന് ജീവിതത്തെ കുറിച്ച് overthink ചെയ്യൂ",
+          "Favourite song playlist-ൽ നിന്ന് delete ചെയ്യുക",
+          "ഒരു ദിവസത്തേക്ക് phone ഉപയോഗിക്കാതിരിക്കുക",
+          "10k steps നടക്കുക",
+          "Watch അയാളും ഞാനും തമ്മിൽ",
+          "Favourite meme page block ചെയ്യ് ",
+          "Instagram delete ചെയ്യ്",
+        ],
+        sad: [
+          "ഒരു മന്തി കഴിച്ചാൽ എല്ലാം ശരിയാകും",
+          "ഫ്രണ്ട്സിന്റെ കൂടെ കറങ്ങാൻ പോകുക",
+          "ചോക്ലേറ്റ് കഴിച്ച് ആഘോഷിക്കൂ",
+          "തണുത്ത വെള്ളത്തിൽ ഒരു കുളി ",
+
+          "വീട്ടിലെ എല്ലാവർക്കും ചോക്ലേറ്റ് കൊടുക്കുകയും, “Gift from me” എന്നു പറയുകയും ചെയ്യുക",
+
+          "റോഡിൽ കണ്ട അജ്ഞാതനോട് “എന്റെ wedding invitation accept cheyyu” എന്നു പറയുക",
+
+          "മഴ പെയ്യുമ്പോൾ കുട ഇല്ലാതെ dance ചെയ്യുക",
+
+          "നിന്റെ favourite പാട്ട് സ്പീക്കറിൽ full volume-ൽ play ചെയ്ത് neighbours-നെ വിളിച്ച് കൂട്ടുക",
+
+          "പൂച്ചക്ക് കണ്ണട ഇടിച്ച് selfie എടുക്കുക",
+
+          "പാചകം ചെയ്യുമ്പോൾ വാഴപ്പഴം curry-ൽ mix ചെയ്യുക (and enjoy it)",
+
+          "രാവിലെ newspaper വായിക്കുന്നവരോട് loudly good morning പറയുക",
+
+          "വീട്ടിലെ എല്ലാവർക്കും matching colourful socks gift ചെയ്യുക",
+
+          "random contact-ന് voice note ആയി “Paattu kelkko” അയക്കുക",
+
+          "വീട്ടിലെ കസേരകൾക്കും പേരിടുക — ‘Chair-മണി’, ‘Chair-ലത’",
+
+          "bus-ൽ കയറി, conductor-നെ happy birthday wish ചെയ്യുക",
+
+          "മഴയിൽ paper boat race നടത്തുക",
+
+          "fridge തുറന്ന്, എല്ലാം taste ചെയ്ത് friends-നെ call ചെയ്ത് review പറയുക",
+
+          "Google-ൽ search: “How to be super duper happy” and follow one random advice",
+
+          "pillow-ന് smiley face drawing ചെയ്യുക",
+
+          "TV news-ൽ anchor serious news പറയുമ്പോൾ ചിരിച്ചു clap ചെയ്യുക",
+
+          "അമ്മയോട് permission വാങ്ങി living room-ൽ dance competition നടത്തുക",
+
+          "random person-നെ gift wrap ചെയ്ത് ചായ കൊടുക്കുക",
+
+          "mirror-ന്റെ മുന്നിൽ 5 minute continuous ചിരി practice ചെയ്യുക",
+        ],
+        lazy: [
+          "റണ്ണിങ് തുടങ്ങൂ",
+          "മുറി ക്ലീൻ ചെയ്യൂ",
+          "കുക്കിങ് മാരത്തോൺ നടത്തൂ",
+          "ഉണർന്നു ഉടനെ 10 തവണ ജമ്പ് ചെയ്യുക",
+
+          "ഒരു ചുറ്റും ദൗഡം നടത്തുക, പിന്നെ പാട്ടുപാടി വിശ്രമിക്കൂ",
+
+          "വീട്ടിൽ നിന്ന് പുറത്തേക്ക് ഒരു ചെറിയ സഞ്ചാരം നടത്തുക",
+          "നിങ്ങളുടെ ഇഷ്ടപ്പെട്ട പാട്ട് കേൾക്കുമ്പോൾ നൃത്തം ചെയ്യുക",
+          "ഒരു പുതിയ ഹോബി ആരംഭിക്കുക",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട പുസ്തകം വായിക്കുക",
+          "ഒരു പുതിയ പാചക വിഭവം പരീക്ഷിക്കുക",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട സിനിമ കാണുക",
+          "ഒരു പുതിയ ഭാഷ പഠിക്കാൻ ശ്രമിക്കുക",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട സംഗീത ഉപകരണം വായിക്കുക",
+          "ഒരു പുതിയ കളി കളിക്കുക",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം തയ്യാറാക്കുക",
+          "ഒരു പുതിയ സ്ഥലത്ത് സഞ്ചാരം നടത്തുക",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഫോട്ടോ എടുത്ത് ഫ്രെയിം ചെയ്യുക",
+        ],
+
+        angry: [
+          "ഒരു പാട്ട് പാടൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട സിനിമ കാണൂ",
+          "ഒരു പുതിയ ഹോബി ആരംഭിക്കൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം കഴിക്കൂ",
+          "ഒരു പുതിയ സ്ഥലത്ത് സഞ്ചാരം നടത്തൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട പുസ്തകം വായിക്കൂ",
+          "ഒരു പുതിയ കളി കളിക്കൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട സംഗീത ഉപകരണം വായിക്കൂ",
+          "ഒരു പുതിയ പാചക വിഭവം പരീക്ഷിക്കൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഫോട്ടോ എടുത്ത് ഫ്രെയിം ചെയ്യൂ",
+        ],
+
+        desperate: [
+          "ഒരു പുതിയ ഹോബി തുടങ്ങൂ",
+          "ഒരു random ആളെ പ്രശംസിക്കൂ",
+
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട പാട്ട് പാടൂ",
+          "ഒരു പുതിയ സ്ഥലത്ത് സഞ്ചാരം നടത്തൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട സിനിമ കാണൂ",
+          "ഒരു പുതിയ ഭാഷ പഠിക്കൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം കഴിക്കൂ",
+          "ഒരു പുതിയ കളി കളിക്കൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട പുസ്തകം വായിക്കൂ",
+          "ഒരു പുതിയ പാചക വിഭവം പരീക്ഷിക്കൂ",
+        ],
+
+        romantic: [
+          "ഒരു പാട്ട് എഴുതി കൊടുക്കൂ",
+          "ചന്ദ്രനോട് സംസാരിക്കൂ",
+
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ആളെ surprise dinner-നായി ക്ഷണിക്കൂ",
+          "ഒരു romantic movie കാണൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ആളെ ഒരു gift കൊടുക്കൂ",
+          "ഒരു romantic dinner date plan ചെയ്യൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ആളെ ഒരു love letter എഴുതൂ",
+          "ഒരു romantic song പാടൂ",
+          "നിങ്ങളുടെ പ്രിയപ്പെട്ട ആളെ surprise gift-നായി ഒരു note എഴുതൂ",
+          "ഒരു romantic poem എഴുതൂ",
+        ],
+      };
+
+      function giveOppositeTask() {
+        const mood = document.getElementById("mood").value;
+        const output = document.getElementById("output");
+        const sound = document.getElementById("sound");
+
+        if (!mood) {
+          output.textContent = "😏 ആദ്യം മൂഡ്‌ തിരഞ്ഞെടുക്കണം!";
+          return;
+        }
+
+        document.body.style.background = `linear-gradient(45deg, hsl(${
+          Math.random() * 360
+        }, 80%, 90%), hsl(${Math.random() * 360}, 80%, 85%))`;
+
+        const tasks = oppositeTasks[mood];
+        output.textContent = tasks[Math.floor(Math.random() * tasks.length)];
+
+        sound.play();
+      }
+    </script>
+    <style>
+      .emoji {
+        position: fixed;
+        font-size: 2rem;
+        animation: floatEmoji linear infinite;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.7;
+      }
+
+      @keyframes floatEmoji {
+        from {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0.7;
+        }
+        to {
+          transform: translateY(-10vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <script>
+      const emojis = [
+        "😂",
+        "🔥",
+        "😎",
+        "🥳",
+        "🤯",
+        "😌",
+        "🤩",
+        "🙂‍↔",
+        "🤓",
+        "🥳",
+        "😶‍🌫",
+        "🥶",
+        "🫣",
+        "🍩",
+        "🎉",
+      ];
+
+      function createEmoji() {
+        const emoji = document.createElement("div");
+        emoji.className = "emoji";
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(emoji);
+
+        setTimeout(() => emoji.remove(), 10000);
+      }
+
+      setInterval(createEmoji, 500);
+    </script>
+  </body>
+</html>
