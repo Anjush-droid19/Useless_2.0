@@ -79,10 +79,10 @@ For Software:
 <img  width="1919" height="1079" alt="Screenshot 2025-08-09 053149" src="https://github.com/user-attachments/assets/1533cac2-65ba-4026-bba3-64b7d08d3ab5" />
 
 
-<img src="img2.png"
+<img src="img2.png">
 
 
-<img src="img3.png"
+<img src="img3.png">
 
 
 ---
