@@ -76,7 +76,8 @@ For Software:
 
 - # Screenshots (Add at least 3)
 
-<img  width="1919" height="1079" alt="Screenshot 2025-08-09 053149" src="https://github.com/user-attachments/assets/1533cac2-65ba-4026-bba3-64b7d08d3ab5" />
+<img width="1919" height="1079" alt="Screenshot 2025-08-09 053149" src="https://github.com/user-attachments/assets/8c282ce7-816e-4adb-89c5-aaf5a59bde2e" />
+
 
 
 <img width="1919" height="1079" alt="Screenshot 2025-08-09 053159" src="https://github.com/user-attachments/assets/4137071b-166e-4efa-a37c-15feb8004950" />
